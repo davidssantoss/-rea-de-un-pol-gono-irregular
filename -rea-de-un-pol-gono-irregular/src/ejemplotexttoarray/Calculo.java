@@ -17,5 +17,6 @@ public abstract class Calculo {
     
         
     public abstract double calcularArea();
+    public abstract double calcularArea(double[] x, double[] y);
     
 }

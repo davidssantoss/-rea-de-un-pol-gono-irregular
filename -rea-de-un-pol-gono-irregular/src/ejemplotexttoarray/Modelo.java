@@ -33,4 +33,18 @@ public class Modelo extends Calculo{
         return res;
     }
     
+    // Sobrecarga de calcularArea
+    @Override
+    public double calcularArea(double[] x, double[] y) {
+        if (x.length != y.length) {
+            return 0.0;
+        } else {
+            double area = 0.0;
+            for (int i = 0; i < y.length-1; i++) {
+                area += x[i+1]*y[i] - x[i]*y[i+1];
+            }
+            return area/2;
+        }
+    }
+    
 }

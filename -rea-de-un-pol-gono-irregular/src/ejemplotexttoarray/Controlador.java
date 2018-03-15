@@ -7,6 +7,7 @@ package ejemplotexttoarray;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,14 +22,10 @@ class Controlador implements ActionListener {
         this.m = m;
     }
 
-    
-
-    
-    
-
     @Override
     public void actionPerformed(ActionEvent evento) {
-        m.x= new double [6];
+        try {
+          m.x= new double [6];
         m.y= new double [6];
         String s1= inter.txtx1.getText();
         m.x[0]=Double.parseDouble(s1);
@@ -56,11 +53,18 @@ class Controlador implements ActionListener {
         String s12= inter.txty6.getText();
         m.y[5]=Double.parseDouble(s12);
          
+        if (m.x[0] != m.y[m.y.length-1]) {;
+            JOptionPane.showMessageDialog(null, "Para ser un polígono regular, el primer vertice de X debe corresponder con el de Y");
+        }
         
         if (evento.getSource()== inter.boton ){
             inter.resul.setText(""+m.calcularArea());
-            
-        }           
+        }    
+        
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Por favor ingresa correctamente todos los datos");
+        }
+                
     }
 
     
