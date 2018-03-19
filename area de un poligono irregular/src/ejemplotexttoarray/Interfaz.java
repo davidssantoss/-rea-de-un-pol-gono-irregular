@@ -1,5 +1,6 @@
 package ejemplotexttoarray;
 
+import java.awt.Color;
 import java.awt.Container;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,7 +14,7 @@ import javax.swing.JTextField;
  */
 public class Interfaz extends JFrame{
     DibujoPoligono dp;
-    JPanel panel = new JPanel();
+    
     JLabel etqx1 = new JLabel ("x1");
     JLabel etqx2 = new JLabel ("x2");
     JLabel etqx3 = new JLabel ("x3");
@@ -124,16 +125,17 @@ public class Interfaz extends JFrame{
         
         c.add(boton);
         boton.setBounds(830, 50, 100, 50); 
-        
+        /*dp = new DibujoPoligono();
+        this.add(dp);*/
     }
     void mostrar (){
         setSize(1000,1000);
         setVisible(true);
     }
-    void colorear(){
-        add(new DibujoPoligono() );
-        add(panel);
-    }
+    
+        
+        
+    
     void asignarOyente(Controlador c){
         boton.addActionListener(c);
     }

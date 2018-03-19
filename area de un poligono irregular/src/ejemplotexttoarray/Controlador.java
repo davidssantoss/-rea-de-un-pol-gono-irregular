@@ -18,10 +18,10 @@ class Controlador implements ActionListener {
     Modelo m;
     DibujoPoligono dp;
 
-    public Controlador(Interfaz inter, Modelo m, DibujoPoligono dp) {
+    public Controlador(Interfaz inter, Modelo m) {
         this.inter = inter;
         this.m = m;
-        this.dp= dp;
+        
     }
 
     @Override
@@ -67,8 +67,8 @@ class Controlador implements ActionListener {
         
         if (evento.getSource()== inter.boton ){
             inter.resul.setText(""+m.calcularArea(m.x,m.y));
-            DibujoPoligono p = new DibujoPoligono();
-            p.paintComponent(inter.getGraphics());
+            dp = new DibujoPoligono();
+            dp.paint(inter.getGraphics());
             
         }    
         
