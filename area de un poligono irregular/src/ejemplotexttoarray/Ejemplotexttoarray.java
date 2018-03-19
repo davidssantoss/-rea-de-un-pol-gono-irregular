@@ -17,7 +17,9 @@ public class Ejemplotexttoarray {
     public static void main(String[] args) {
         Interfaz i = new Interfaz ();
         Modelo m= new Modelo();
+        
         Controlador c= new Controlador (i,m);
+        
         i.asignarOyente(c);
         i.mostrar();
         

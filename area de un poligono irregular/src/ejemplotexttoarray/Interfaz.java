@@ -125,8 +125,7 @@ public class Interfaz extends JFrame{
         
         c.add(boton);
         boton.setBounds(830, 50, 100, 50); 
-        /*dp = new DibujoPoligono();
-        this.add(dp);*/
+        
     }
     void mostrar (){
         setSize(1000,1000);

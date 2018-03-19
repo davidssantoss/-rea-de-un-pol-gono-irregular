@@ -20,7 +20,7 @@ public class Modelo extends Calculo{
             return 0.0;
         } else {
             double area = 0.0;
-            for (int i = 0; i < y.length-1; i+=2) {
+            for (int i = 0; i < y.length-1; i++) {
                 area += x[i]*y[i+1]- x[i+1]*y[i];
             }
             return area/2;
