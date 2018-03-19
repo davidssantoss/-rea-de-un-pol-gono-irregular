@@ -4,6 +4,7 @@ import java.awt.Container;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -11,6 +12,8 @@ import javax.swing.JTextField;
  * @author david
  */
 public class Interfaz extends JFrame{
+    DibujoPoligono dp;
+    JPanel panel = new JPanel();
     JLabel etqx1 = new JLabel ("x1");
     JLabel etqx2 = new JLabel ("x2");
     JLabel etqx3 = new JLabel ("x3");
@@ -39,90 +42,97 @@ public class Interfaz extends JFrame{
     JButton boton = new JButton ("Calcular");
 
     public Interfaz() {
+        this.setTitle("Hallar el area de un poligono");
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Container c= getContentPane();
         c.setLayout(null);
         c.add(resul);
-        resul.setBounds(430, 150, 100, 60);
+        resul.setBounds(830, 150, 100, 60);
                 
         c.add(etqx1);
-        etqx1.setBounds(10, 10, 20, 20);
+        etqx1.setBounds(430, 10, 20, 20);
         
         c.add(etqx2);
-        etqx2.setBounds(10, 40, 20, 20);
+        etqx2.setBounds(430, 40, 20, 20);
         
         c.add(etqx3);
-        etqx3.setBounds(10, 70, 20, 20);
+        etqx3.setBounds(430, 70, 20, 20);
         
         c.add(etqx4);
-        etqx4.setBounds(10, 100, 20, 20);
+        etqx4.setBounds(430, 100, 20, 20);
         
         c.add(etqx5);
-        etqx5.setBounds(10, 130, 20, 20);
+        etqx5.setBounds(430, 130, 20, 20);
         
         c.add(etqx6);
-        etqx6.setBounds(10, 160, 20, 20);
+        etqx6.setBounds(430, 160, 20, 20);
         
         c.add(txtx1);
-        txtx1.setBounds(40, 10, 80, 20);
+        txtx1.setBounds(480, 10, 80, 20);
         
         c.add(txtx2);
-        txtx2.setBounds(40, 40, 80, 20);
+        txtx2.setBounds(480, 40, 80, 20);
         
         c.add(txtx3);
-        txtx3.setBounds(40, 70, 80, 20);
+        txtx3.setBounds(480, 70, 80, 20);
         
         c.add(txtx4);
-        txtx4.setBounds(40, 100, 80, 20);
+        txtx4.setBounds(480, 100, 80, 20);
         
         c.add(txtx5);
-        txtx5.setBounds(40, 130, 80, 20);
+        txtx5.setBounds(480, 130, 80, 20);
         
         c.add(txtx6);
-        txtx6.setBounds(40, 160, 80, 20);
+        txtx6.setBounds(480, 160, 80, 20);
         
         
         c.add(etqy1);
-        etqy1.setBounds(220, 10, 20, 20);
+        etqy1.setBounds(650, 10, 20, 20);
         
         c.add(etqy2);
-        etqy2.setBounds(220, 40, 80, 20);
+        etqy2.setBounds(650, 40, 80, 20);
         
         c.add(etqy3);
-        etqy3.setBounds(220, 70, 80, 20);
+        etqy3.setBounds(650, 70, 80, 20);
         
         c.add(etqy4);
-        etqy4.setBounds(220, 100, 80, 20);
+        etqy4.setBounds(650, 100, 80, 20);
         
         c.add(etqy5);
-        etqy5.setBounds(220, 130, 80, 20);
+        etqy5.setBounds(650, 130, 80, 20);
         
         c.add(etqy6);
-        etqy6.setBounds(220, 160, 80, 20);
+        etqy6.setBounds(650, 160, 80, 20);
         
         c.add(txty1);
-        txty1.setBounds(250, 10, 80, 20);
+        txty1.setBounds(690, 10, 80, 20);
         
         c.add(txty2);
-        txty2.setBounds(250, 40, 80, 20);
+        txty2.setBounds(690, 40, 80, 20);
         
         c.add(txty3);
-        txty3.setBounds(250, 70, 80, 20);
+        txty3.setBounds(690, 70, 80, 20);
         
         c.add(txty4);
-        txty4.setBounds(250, 100, 80, 20);
+        txty4.setBounds(690, 100, 80, 20);
         
         c.add(txty5);
-        txty5.setBounds(250, 130, 80, 20);
+        txty5.setBounds(690, 130, 80, 20);
         
         c.add(txty6);
-        txty6.setBounds(250, 160, 80, 20);
+        txty6.setBounds(690, 160, 80, 20);
         
         c.add(boton);
-        boton.setBounds(430, 50, 100, 50);        
+        boton.setBounds(830, 50, 100, 50); 
+        
     }
     void mostrar (){
-        setSize(600,600);
+        setSize(1000,1000);
         setVisible(true);
+    }
+    void colorear(){
+        add(new DibujoPoligono() );
+        add(panel);
     }
     void asignarOyente(Controlador c){
         boton.addActionListener(c);

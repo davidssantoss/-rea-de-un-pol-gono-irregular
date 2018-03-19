@@ -17,9 +17,11 @@ public class Ejemplotexttoarray {
     public static void main(String[] args) {
         Interfaz i = new Interfaz ();
         Modelo m= new Modelo();
-        Controlador c= new Controlador (i,m);
+        DibujoPoligono dp = new DibujoPoligono();
+        Controlador c= new Controlador (i,m,dp);        
         i.asignarOyente(c);
         i.mostrar();
+        i.colorear();
         
         
     }
